@@ -2,7 +2,7 @@
   "name": "sinontesting",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start:dev": "nodemon ./bin/wwww",
     "start:test": "cross-env NODE_ENV=test PORT=3030 nodemon ./bin/www",

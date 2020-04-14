@@ -9,15 +9,24 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Type.STRING,
+        allowNull: false
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      mainIngredient: {
+        type: Type.STRING,
+        allowNull: false
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      dishType: {
+        type: Type.STRING,
+        allowNull: false
+      },
+      numIngredients: {
+        type: Type.INTEGER,
+        allowNull: false
+      },
+      recommend: {
+        type: Type.ENUM(recommendationList),
+        allowNull: false
       }
     });
   },

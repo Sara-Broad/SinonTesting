@@ -1,15 +1,33 @@
 'use strict';
 const recommendationList = require('.././static/enums')
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, Type) => {
   const recipe = sequelize.define('recipe', {
-    name: DataTypes.STRING,
-    mainIngredient: DataTypes.STRING,
-    dishType: DataTypes.STRING,
-    numIngredients: DataTypes.INTEGER
-    // main ingredient
-    // dish type
-    // numIngredients
-    // recommend - yes or no
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
+    name: {
+      type: Type.STRING,
+      allowNull: false
+    },
+    mainIngredient: {
+      type: Type.STRING,
+      allowNull: false
+    },
+    dishType: {
+      type: Type.STRING,
+      allowNull: false
+    },
+    numIngredients: {
+      type: Type.INTEGER,
+      allowNull: false
+    },
+    recommend: {
+      type: Type.ENUM(recommendationList),
+      allowNull: false
+    }
   }, {});
   book.associate = function(models) {
     // associations can be defined here
