@@ -23,10 +23,6 @@ module.exports = {
       numIngredients: {
         type: Type.INTEGER,
         allowNull: false
-      },
-      recommend: {
-        type: Type.ENUM(recommendationList),
-        allowNull: false
       }
     });
   },

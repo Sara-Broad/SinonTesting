@@ -2,12 +2,12 @@
 const recommendationList = require('.././static/enums')
 module.exports = (sequelize, Type) => {
   const recipe = sequelize.define('recipe', {
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: Sequelize.INTEGER
-    },
+    // id: {
+    //   allowNull: false,
+    //   autoIncrement: true,
+    //   primaryKey: true,
+    //   type: Sequelize.INTEGER
+    // },
     name: {
       type: Type.STRING,
       allowNull: false
@@ -23,14 +23,10 @@ module.exports = (sequelize, Type) => {
     numIngredients: {
       type: Type.INTEGER,
       allowNull: false
-    },
-    recommend: {
-      type: Type.ENUM(recommendationList),
-      allowNull: false
     }
   }, {});
-  book.associate = function(models) {
-    // associations can be defined here
+  recipe.associate = function(models) {
+    recipe.belongsToMany(models.wishlist, {through: 'wishlistBooks'})
   };
   return recipe;
 };
