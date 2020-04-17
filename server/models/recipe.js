@@ -1,5 +1,4 @@
 'use strict';
-const recommendationList = require('.././static/enums')
 module.exports = (sequelize, Type) => {
   const recipe = sequelize.define('recipe', {
     // id: {
