@@ -10,7 +10,7 @@ module.exports = {
         } else {
             recipes = require('./recipeData/recipe-list')();
         }
-        return queryInterface.bulkInsert('recipies', recipes);
+        return queryInterface.bulkInsert('recipes', recipes);
     },
     down: function () {
 

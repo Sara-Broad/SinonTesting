@@ -9,20 +9,28 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Type.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       mainIngredient: {
-        type: Type.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       dishType: {
-        type: Type.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       numIngredients: {
-        type: Type.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: false
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },

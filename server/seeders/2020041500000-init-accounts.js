@@ -2,21 +2,21 @@
 
 module.exports = {
     up: function (queryInterface) {
-        return queryInterface.bulkInsert(accounts)
+        return queryInterface.bulkInsert('accounts', accounts)
     },
     down: function (queryInterface) {
-        return queryInterface.destroy(accounts)
+        return queryInterface.destroy('accounts', accounts)
     }
 }
 
 const accounts = [{
-        name: 'The Recipe Club',
-        createdAt: newDate(),
-        updatedAt: newDate()
+        fullName: 'The Recipe Club',
+        createdAt: new Date(),
+        updatedAt: new Date()
     },
     {
-        name: 'Food Channel',
-        createdAt: newDate(),
-        updatedAt: newDate()
+        fullName: 'Food Channel',
+        createdAt: new Date(),
+        updatedAt: new Date()
     }
 ]
