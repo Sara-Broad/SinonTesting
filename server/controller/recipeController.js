@@ -1,7 +1,7 @@
 const responses = require('../responses');
 const CrudController = require('./crudController');
 
-  const Recipe = require('../models').recipe;
+const Recipe = require('../models').recipe;
 
   module.exports = new CrudController(Recipe, {
       updateById: (req, res) => {
